@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 final List<String> imgList = [
   "images/gorilla_arms.png",
   "images/mantis_blades.png",
-  "images/monowire.png"
+  "images/monowire.png",
+  "images/projectilelauncher.png"
 ];
 
 class CarouselWithIndicatorDemo extends StatefulWidget {
@@ -19,7 +20,8 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return Column(
+      children: [
       CarouselSlider(
         items: imgList
             .map((item) => Container(
@@ -47,7 +49,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: _current == index
-                  ? const Color.fromRGBO(0, 0, 0, 0.9)
+                  ? const Color.fromARGB(255, 243, 230, 0)
                   : const Color.fromRGBO(0, 0, 0, 0.4),
             ),
           );

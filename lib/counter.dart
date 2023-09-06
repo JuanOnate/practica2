@@ -13,14 +13,14 @@ class _CounterDesign extends State<CounterDesign> {
   void add() {
     setState(() {
       _n++;
-      _amt = _amt + 10;
+      _amt = _amt + 950;
     });
   }
 
   void minus() {
     setState(() {
       if (_n != 0) _n--;
-      _amt = _amt - 10;
+      _amt = _amt - 950;
     });
   }
 
@@ -68,7 +68,7 @@ class _CounterDesign extends State<CounterDesign> {
           ),
         ),
         const SizedBox(
-          width: 70.0,
+          width: 50.0,
         ),
         Container(
           child: Text(

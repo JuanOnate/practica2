@@ -9,6 +9,8 @@ final List<String> imgList = [
 ];
 
 class CarouselWithIndicatorDemo extends StatefulWidget {
+  const CarouselWithIndicatorDemo({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _CarouselWithIndicatorState();
@@ -24,9 +26,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
       children: [
       CarouselSlider(
         items: imgList
-            .map((item) => Container(
-                  child: Center(child: Image.asset(item.toString())),
-                ))
+            .map((item) => Center(child: Image.asset(item.toString())))
             .toList(),
         options: CarouselOptions(
             autoPlay: true,

@@ -5,10 +5,12 @@ import 'package:practica2/counter.dart';
 import 'package:practica2/image_carousel.dart';
 
 void main() {
-  runApp(FirstScreen());
+  runApp(const FirstScreen());
 }
 
 class FirstScreen extends StatefulWidget {
+  const FirstScreen({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _FirstScreen();

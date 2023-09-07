@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CounterDesign extends StatefulWidget {
+  const CounterDesign({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _CounterDesign();
@@ -19,8 +21,10 @@ class _CounterDesign extends State<CounterDesign> {
 
   void minus() {
     setState(() {
-      if (_n != 0) _n--;
+      if (_n != 0) { 
+        _n--;
       _amt = _amt - 950;
+      }
     });
   }
 
@@ -70,14 +74,12 @@ class _CounterDesign extends State<CounterDesign> {
         const SizedBox(
           width: 50.0,
         ),
-        Container(
-          child: Text(
-            '€\$ $_amt',
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25.0,
-            ),
-          )
+        Text(
+          '€\$ $_amt',
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22.0,
+          ),
         ),
       ],
     );

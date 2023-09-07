@@ -31,7 +31,7 @@ class _CounterDesign extends State<CounterDesign> {
         Container(
           width: 155.0,
           decoration: BoxDecoration(
-            color: Colors.blueGrey[50],
+            color: const Color.fromARGB(255, 60, 60, 60),
             borderRadius: BorderRadius.circular(20.0),
           ),
           child: Row(
@@ -39,7 +39,7 @@ class _CounterDesign extends State<CounterDesign> {
               IconButton(
                 icon: const Icon(
                   Icons.add,
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 243, 230, 0),
                 ),
                 onPressed: () {
                   add();
@@ -48,14 +48,14 @@ class _CounterDesign extends State<CounterDesign> {
               const SizedBox(
                 width: 2.0,
               ),
-              Text('$_n', style: const TextStyle(fontSize: 30.0)),
+              Text('$_n', style: const TextStyle(fontSize: 30.0, color: Color.fromARGB(255, 243, 230, 0))),
               const SizedBox(
                 width: 5.0,
               ),
               IconButton(
                 icon: const Icon(
                   Icons.remove,
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 243, 230, 0),
                 ),
                 onPressed: () {
                   minus();

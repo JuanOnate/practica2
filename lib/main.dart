@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:lottie/lottie.dart';
 import 'package:practica2/counter.dart';
 import 'package:practica2/image_carousel.dart';
@@ -17,6 +16,7 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreen extends State<FirstScreen> {
+  double value = 3.5;
   bool _isFavorited = true;
 
   void _toggleFavorite() {
@@ -91,7 +91,7 @@ class _FirstScreen extends State<FirstScreen> {
                           gradient: LinearGradient(
                             begin: Alignment.bottomCenter,
                             end: Alignment.topCenter,
-                            colors: [Colors.white, Color.fromARGB(255, 243, 230, 0)]
+                            colors: [Color.fromARGB(255, 60, 60, 60), Color.fromARGB(255, 243, 230, 0)]
                           ),
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(50.0),
@@ -155,7 +155,7 @@ class _FirstScreen extends State<FirstScreen> {
                                     //height: 70.0,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
-                                        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                                        backgroundColor: const Color.fromARGB(255, 60, 60, 60),
                                         elevation: 0.0,
                                         side: const BorderSide(color: Color.fromARGB(255, 243, 230, 0), width: 2),
                                         minimumSize: const Size(80, 50)
@@ -163,11 +163,11 @@ class _FirstScreen extends State<FirstScreen> {
                                       onPressed: _toggleFavorite,
                                       child: IconButton(
                                           icon: _isFavorited
-                                              ? const Icon(
+                                              ? Icon(
                                                   Icons.favorite_border,
                                                   color: Color.fromARGB(255, 243, 230, 0),
                                                 )
-                                              : const Icon(
+                                              : Icon(
                                                   Icons.favorite,
                                                   color: Color.fromARGB(255, 243, 230, 0),
                                                 ), onPressed: () {  },),
@@ -193,11 +193,40 @@ class _FirstScreen extends State<FirstScreen> {
                                         style:
                                             TextStyle(
                                               fontWeight: FontWeight.w900,
+                                              color: Color.fromARGB(255, 60, 60, 60)
                                             ),
                                       ),
                                     ),
-                                  )
+                                  ),
                                 ],
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Center(
+                                child: RatingBar(
+                                  initialRating: 4.5,
+                                  direction: Axis.horizontal,
+                                  allowHalfRating: true,
+                                  itemCount: 5,
+                                  itemSize: 40.0,
+                                  ratingWidget: RatingWidget(
+                                    full: Icon(Icons.star, color: Color.fromARGB(255, 243, 230, 0)), 
+                                    half: Icon(Icons.star_half, color:Color.fromARGB(255, 243, 230, 0)), 
+                                    empty: Icon(Icons.star_border, color: Color.fromARGB(255, 243, 230, 0))
+                                  ),
+                                  onRatingUpdate: (value) {
+                                  },
+                                ),
+                              ),
+                              const Center(
+                                child: 
+                                Text(
+                                  'Rate this items', 
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 243, 230, 0)
+                                  )
+                                )
                               ),
                             ],
                           ),

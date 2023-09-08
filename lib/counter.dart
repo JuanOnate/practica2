@@ -39,6 +39,7 @@ class _CounterDesign extends State<CounterDesign> {
             borderRadius: BorderRadius.circular(20.0),
           ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               IconButton(
                 icon: const Icon(
@@ -48,14 +49,8 @@ class _CounterDesign extends State<CounterDesign> {
                 onPressed: () {
                   add();
                 },
-              ),
-              const SizedBox(
-                width: 2.0,
-              ),
+              ),              
               Text('$_n', style: const TextStyle(fontSize: 30.0, color: Color.fromARGB(255, 243, 230, 0))),
-              const SizedBox(
-                width: 5.0,
-              ),
               IconButton(
                 icon: const Icon(
                   Icons.remove,
@@ -72,13 +67,13 @@ class _CounterDesign extends State<CounterDesign> {
           ),
         ),
         const SizedBox(
-          width: 50.0,
+          width: 40.0,
         ),
         Text(
           '€\$ $_amt',
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 22.0,
+            fontSize: 24.0,
           ),
         ),
       ],

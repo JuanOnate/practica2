@@ -162,17 +162,17 @@ class _FirstScreen extends State<FirstScreen> {
                                         side: const BorderSide(color: Color.fromARGB(255, 243, 230, 0), width: 2),
                                         minimumSize: const Size(80, 50)
                                       ),
-                                      onPressed: _toggleFavorite,
-                                      child: IconButton(
-                                          icon: _isFavorited
-                                              ? Icon(
-                                                  Icons.favorite_border,
-                                                  color: Color.fromARGB(255, 243, 230, 0),
-                                                )
-                                              : Icon(
-                                                  Icons.favorite,
-                                                  color: Color.fromARGB(255, 243, 230, 0),
-                                                ), onPressed: () {  },),
+                                      onPressed: (){
+                                        setState(() {
+                                          _isFavorited = !_isFavorited;
+                                        });
+                                      },
+                                      child: Icon(
+                                          _isFavorited
+                                              ? Icons.favorite
+                                              : Icons.favorite_border,
+                                          color: Color.fromARGB(255, 243, 230, 0),
+                                      ),
                                     ),
                                   ),
                                   const SizedBox(
